@@ -8,7 +8,7 @@ object core extends Common with PublishModule {
 
   def artifactName = "gensrv-core"
 
-  def publishVersion = "0.1.0"
+  def publishVersion = "0.1.1"
 
   def pomSettings = PomSettings(
     description = "Low boilerplate web services",
