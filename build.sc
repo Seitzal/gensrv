@@ -1,13 +1,15 @@
-import mill._, scalalib._
+import mill._, scalalib._, publish._
 
 trait Common extends ScalaModule {
   def scalaVersion = "2.13.2"
 }
 
-object core extends Common {
+object core extends Common with PublishModule {
 
   def artifactName = "gensrv-core"
-  
+
+  def publishVersion = "0.1.0"
+
   def pomSettings = PomSettings(
     description = "Low boilerplate web services",
     organization = "eu.seitzal",
