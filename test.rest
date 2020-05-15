@@ -1,0 +1,9 @@
+###
+POST http://localhost:8080/entry
+
+{
+"content": "Do laundry",
+"done": false
+}
+###
+GET http://localhost:8080/entry/95
