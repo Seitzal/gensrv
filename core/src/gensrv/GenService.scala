@@ -60,7 +60,7 @@ abstract class GenService extends IOApp with LazyLogging {
   def processUnexpected(io: IO[Response[IO]]) =
     io.handleErrorWith {
       ex: Throwable =>
-      logger.debug("Unexpected", ex)
+      logger.info(s"Uncaught error while processing request: ${ex.getClass.getName}: ${ex.getMessage}", ex)
       if (config.getBoolean("server.debug")) {
         InternalServerError(Obj(
           "message" -> 
