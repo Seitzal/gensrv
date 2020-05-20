@@ -87,7 +87,7 @@ abstract class GenService extends IOApp with LazyLogging {
     transactorResource.use { xa =>
       BlazeServerBuilder[IO]
         .bindHttp(config.getInt("server.port"), config.getString("server.host"))
-        .withHttpApp(routesFinal(xa, config))
+        .withHttpApp(CORS(routesFinal(xa, config)))
         .serve
         .compile
         .drain
